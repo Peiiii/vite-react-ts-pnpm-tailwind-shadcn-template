@@ -5,6 +5,7 @@
 ## 使用模板
 
 使用 degit 克隆模板（推荐）：
+
 ```bash
 pnpm dlx degit Peiiii/vite-react-ts-pnpm-tailwind-shadcn-template my-app
 cd my-app
@@ -12,6 +13,7 @@ pnpm install
 ```
 
 或者直接从 GitHub 克隆：
+
 ```bash
 git clone https://github.com/Peiiii/vite-react-ts-pnpm-tailwind-shadcn-template.git my-app
 cd my-app
@@ -129,4 +131,50 @@ pnpm build
 
 ```bash
 pnpm preview
+```
+
+## 添加 Workspaces 支持
+
+### 1. 配置 pnpm-workspace.yaml
+
+在项目根目录创建 `pnpm-workspace.yaml` 文件：
+
+```yaml
+packages:
+  # 所有在 packages/ 目录下的包
+  - "packages/*"
+  # 所有在 apps/ 目录下的包
+  - "apps/*"
+```
+
+### 2. 调整项目结构
+
+推荐的项目结构：
+
+```
+.
+├── apps/
+│   ├── web/           # Web 应用
+│   └── admin/         # 管理后台
+├── packages/
+│   ├── ui/            # 共享 UI 组件
+│   └── utils/         # 共享工具函数
+├── pnpm-workspace.yaml
+└── package.json
+```
+
+### 3. 工作区命令示例
+
+```bash
+# 在所有工作区安装依赖
+pnpm install
+
+# 在特定工作区添加依赖
+pnpm --filter @your-scope/web add lodash
+
+# 在所有工作区运行脚本
+pnpm -r dev
+
+# 在特定工作区运行脚本
+pnpm --filter @your-scope/web dev
 ```
