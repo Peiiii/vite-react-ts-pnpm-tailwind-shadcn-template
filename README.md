@@ -1,6 +1,22 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + PNPM + Tailwind + Shadcn
 
-使用 Vite、React、TypeScript、PNPM、Tailwind 和 shadcn/ui 的模板项目，快速启动现代 Web 应用开发。
+使用 Vite、React、TypeScript、PNPM、Tailwind 和 Shadcn 的模板项目，快速启动现代 Web 应用开发。
+
+## 使用模板
+
+使用 degit 克隆模板（推荐）：
+```bash
+pnpm dlx degit Peiiii/vite-react-ts-pnpm-tailwind-shadcn-template my-app
+cd my-app
+pnpm install
+```
+
+或者直接从 GitHub 克隆：
+```bash
+git clone https://github.com/Peiiii/vite-react-ts-pnpm-tailwind-shadcn-template.git my-app
+cd my-app
+pnpm install
+```
 
 ## 安装
 
